@@ -12,4 +12,8 @@ For a water heater, the heat dissipates slowly, so we can simply pick a fragment
 
 The LCD display shows the current power output in percent, as well as the mode and the obtained time between each SSR output update. A small 10k ohm trimmer potentiometer is required to adjust the LCD brightness.
 
+The code uses an object oriented approach, making re-usable module for obtaining the input and controlling the output. Each instance that is created is automatically registered, such that the `setup()` and `loop()` methods just call the modules. This has the benefit that each component is not depending on a global variable, and can be re-used and instantiated multiple times. For instance, the potentiometer reader can be created for multiple input pins, and the SSR controller can be created for multiple outputs, and custom logic can tie the inputs and outputs together, without needing to copy the logic.
+
+# Schematics
+
 ![Schematics](https://raw.githubusercontent.com/kenkendk/arduino-ssr-controller/master/arduino-ssr-controller_bb.png)
