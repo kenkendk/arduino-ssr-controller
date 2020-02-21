@@ -17,7 +17,7 @@ const uint16_t ssrPin = 13;      // select the pin for toggling the SSR
 const uint16_t togglePin = 9;    // select the pin for toggling chunked/dispersed mode
 
 // LCD pin mapping, change to match your board wiring
-LiquidCrystal lcd(2, 3, 4, 5 ,6, 7);
+LiquidCrystal lcd(2, 3, 4, 5, 6, 7);
 
 // LCD layout (16x2)
 const uint16_t LCD_COLUMNS = 16;
@@ -50,7 +50,7 @@ class RunProcess {
         head = this;
       } else {
         RunProcess* n = head;
-        while(n->next == NULL)
+        while(n->next != NULL)
           n = n->next;
 
         n->next = this;
